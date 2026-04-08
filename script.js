@@ -1,4 +1,3 @@
-// Datos de ejemplo que puedes reutilizar en tu CV
 const projects = [
   { title: "Landing personal", tech: ["HTML", "CSS"], year: 2024, url: "#" },
   { title: "API demo", tech: ["JavaScript", "Fetch"], year: 2025, url: "#" },
@@ -11,7 +10,6 @@ const skills = [
   { name: "Git y GitHub", level: "en progreso" },
 ];
 
-// Utilidades de datos (se pueden ejecutar en Node)
 function filterProjectsByWord(word) {
   return projects.filter((project) =>
     project.title.toLowerCase().includes(word.toLowerCase())
@@ -33,7 +31,6 @@ function validateContact({ name, email, message }) {
   return { ok: errors.length === 0, errors };
 }
 
-// Funciones para DOM (solo corren si hay document disponible)
 function renderProjects(containerId, items = projects) {
   if (typeof document === "undefined") return;
   const container = document.getElementById(containerId);
@@ -106,12 +103,10 @@ function initPage() {
   wireContactForm("#contact-form");
 }
 
-// Ejecuta initPage al cargar en el navegador
 if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", initPage);
 }
 
-// Demostraciones al correr en Node
 function runCliDemos() {
   console.log("Demo: filtrar proyectos que contengan 'api'");
   console.table(filterProjectsByWord("api"));
