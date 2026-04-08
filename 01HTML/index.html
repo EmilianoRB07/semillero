@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emiliano Ramírez – Dev</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-logo">ER<span class="dot">.</span></span>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#projects-section">Proyectos</a></li>
+        <li><a href="#skills-section">Skills</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <!-- Botón que conecta con toggleTheme() del JS -->
+      <button id="toggle-theme" class="theme-btn" aria-label="Cambiar tema">
+        <span class="theme-icon">◐</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner reveal">
+      <p class="hero-label">Desarrollador Web · Estudiante ESCOM IPN</p>
+      <h1 class="hero-title">Emiliano<br><span>Ramírez</span></h1>
+      <p class="hero-sub">
+        Construyendo proyectos con HTML, CSS, JavaScript y PHP.
+        Técnico en Telecomunicaciones, aprendiendo todos los días.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">Ver proyectos</a>
+        <a href="https://github.com/EmilianoRB07" target="_blank" class="btn-ghost">GitHub →</a>
+      </div>
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-ring deco-ring-1"></div>
+      <div class="deco-ring deco-ring-2"></div>
+      <div class="deco-ring deco-ring-3"></div>
+      <span class="deco-code">const dev = "Emiliano";</span>
+    </div>
+  </header>
+
+  <!-- SOBRE MÍ -->
+  <section class="about reveal" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Sobre mí</p>
+        <h2 class="section-title">Un poco de<br>contexto</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          Soy estudiante de Ingeniería en Sistemas Computacionales en ESCOM-IPN y
+          Técnico en Telecomunicaciones egresado del CECyT #11. Me apasiona el desarrollo
+          web y la resolución de problemas reales con código limpio y funcional.
+        </p>
+        <p>
+          Trabajo con Git, entornos Linux y Windows, y disfruto documentar y
+          mantener sistemas. Siempre buscando aprender y colaborar.
+        </p>
+        <div class="about-chips">
+          <span class="chip">📍 Naucalpan, EDOMX</span>
+          <span class="chip">🎓 ESCOM · IPN</span>
+          <span class="chip">📡 Telecomunicaciones</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS — renderProjects() del JS llena este contenedor -->
+  <section class="projects-section" id="projects-section">
+    <div class="section-header reveal">
+      <p class="section-label">Portafolio</p>
+      <h2 class="section-title">Proyectos</h2>
+    </div>
+
+    <!-- Filtro de búsqueda — usa filterProjectsByWord() -->
+    <div class="filter-bar reveal">
+      <input
+        type="text"
+        id="filter-input"
+        class="filter-input"
+        placeholder="Buscar proyecto..."
+        aria-label="Filtrar proyectos"
+      />
+    </div>
+
+    <!-- Aquí renderProjects("projects-grid") inyecta las tarjetas -->
+    <div id="projects-grid" class="projects-grid"></div>
+  </section>
+
+  <!-- SKILLS — renderizado desde el array skills del JS -->
+  <section class="skills-section reveal" id="skills-section">
+    <div class="section-header">
+      <p class="section-label">Habilidades</p>
+      <h2 class="section-title">Stack actual</h2>
+    </div>
+    <div class="skills-list" id="skills-list"></div>
+  </section>
+
+  <!-- EXPERIENCIA (dato estático que usa experienceYears()) -->
+  <section class="exp-section reveal">
+    <div class="exp-inner">
+      <div class="exp-stat">
+        <span class="exp-num" id="exp-years">—</span>
+        <span class="exp-label">años aprendiendo</span>
+      </div>
+      <div class="exp-divider"></div>
+      <div class="exp-stat">
+        <span class="exp-num">3</span>
+        <span class="exp-label">proyectos en portafolio</span>
+      </div>
+      <div class="exp-divider"></div>
+      <div class="exp-stat">
+        <span class="exp-num">∞</span>
+        <span class="exp-label">ganas de crecer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO — wireContactForm() del JS conecta el submit -->
+  <section class="contact-section" id="contact">
+    <div class="section-header reveal">
+      <p class="section-label">Hablemos</p>
+      <h2 class="section-title">Contacto</h2>
+    </div>
+
+    <div class="contact-layout reveal">
+      <div class="contact-info">
+        <a href="mailto:ramirezblancoemiliano220@gmail.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          ramirezblancoemiliano220@gmail.com
+        </a>
+        <a href="https://github.com/EmilianoRB07" target="_blank" class="contact-link">
+          <span class="contact-icon">⌥</span>
+          github.com/EmilianoRB07
+        </a>
+        <a href="tel:5530860336" class="contact-link">
+          <span class="contact-icon">☎</span>
+          55 3086 0336
+        </a>
+      </div>
+
+      <!-- form#contact-form es el selector que usa wireContactForm() -->
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-name">Nombre</label>
+            <!-- name="name" requerido por wireContactForm() -->
+            <input type="text" id="c-name" name="name" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label for="c-email">Email</label>
+            <!-- name="email" requerido por wireContactForm() -->
+            <input type="email" id="c-email" name="email" placeholder="tu@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="c-msg">Mensaje</label>
+          <!-- name="message" requerido por wireContactForm() -->
+          <textarea id="c-msg" name="message" rows="4" placeholder="¿En qué te puedo ayudar?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Enviar mensaje</button>
+        <!-- .form-status es el selector que usa wireContactForm() para feedback -->
+        <p class="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2026 Emiliano Ramírez Blanco</span>
+    <a href="https://github.com/EmilianoRB07" target="_blank">GitHub</a>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Extensión: render de skills y experienceYears (complementa el JS existente) -->
+  <script>
+    // Render del array skills definido en script.js
+    (function renderSkillsUI() {
+      const container = document.getElementById('skills-list');
+      if (!container || typeof skills === 'undefined') return;
+      const levelMap = { 'solido': 85, 'en progreso': 52 };
+      skills.forEach(s => {
+        const pct = levelMap[s.level] ?? 50;
+        container.innerHTML += `
+          <div class="skill-item">
+            <div class="skill-meta">
+              <span class="skill-name">${s.name}</span>
+              <span class="skill-level">${s.level}</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:0%" data-target="${pct}"></div>
+            </div>
+          </div>`;
+      });
+      const bars = container.querySelectorAll('.skill-fill');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            bars.forEach(b => b.style.width = b.dataset.target + '%');
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(container);
+    })();
+
+    // Mostrar años de experiencia usando experienceYears() del script principal
+    (function showExp() {
+      const el = document.getElementById('exp-years');
+      if (el && typeof experienceYears !== 'undefined') {
+        el.textContent = experienceYears(2022);
+      }
+    })();
+
+    // Render inicial de proyectos en el div correcto
+    renderProjects('projects-grid');
+
+    // Filtro en tiempo real usando filterProjectsByWord()
+    (function wireFilter() {
+      const input = document.getElementById('filter-input');
+      if (!input || typeof filterProjectsByWord === 'undefined') return;
+      input.addEventListener('input', () => {
+        const filtered = filterProjectsByWord(input.value);
+        renderProjects('projects-grid', filtered);
+      });
+    })();
+  </script>
+
+</body>
+</html>
